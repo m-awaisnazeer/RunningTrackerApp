@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Running Tracker App</string>
+    <string name="google_maps_api_key">AIzaSyBeOjESk2SrBcdkqeFC8ih_6GCSuf_kIdE</string>
 </resources>
