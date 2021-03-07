@@ -13,5 +13,7 @@ object Common {
     const val NOTIFICATION_CHANNEL_Name = "Tracking"
     const val NOTIFICATION_ID = 1
 
+    const val Location_UPDATE_INTERVAL = 5000L
+    const val FASTEST_LOCATION_INTERVAL = 2000L
 
 }
