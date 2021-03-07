@@ -1,9 +1,10 @@
-package com.communisolve.runningtrackerapp
+package com.communisolve.runningtrackerapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.communisolve.runningtrackerapp.Database.RunDao
+import com.communisolve.runningtrackerapp.R
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
