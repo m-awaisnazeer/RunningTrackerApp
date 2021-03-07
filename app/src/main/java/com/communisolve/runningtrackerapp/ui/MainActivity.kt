@@ -1,11 +1,13 @@
 package com.communisolve.runningtrackerapp.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.communisolve.runningtrackerapp.Common.Common
 import com.communisolve.runningtrackerapp.Database.RunDao
 import com.communisolve.runningtrackerapp.R
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        navigateToTrackingFragmentIfNeeded(intent)
+
         bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
 
         navHostFragment.findNavController()
@@ -34,6 +38,17 @@ class MainActivity : AppCompatActivity() {
                 }
                 }
             }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        navigateToTrackingFragmentIfNeeded(intent)
+    }
+
+    private fun navigateToTrackingFragmentIfNeeded(intent:Intent?){
+        if (intent?.action == Common.ACTION_SHOW_TRACKING_FRAGMENT){
+            navHostFragment.findNavController().navigate(R.id.action_global_trackingFragment)
+        }
     }
 
 
